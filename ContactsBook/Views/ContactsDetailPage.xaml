@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactsBook.Views.ContactsDetailPage">
+
+   <TableView Intent="Form" Margin="16,0">
+		<TableRoot>
+			<TableSection Title="Nome">
+				<EntryCell Label="Primeiro nome" Text="{Binding Path=Contact.FirstName}" />
+				<EntryCell Label="Último nome" Text="{Binding Path=Contact.LastName}" />
+			</TableSection>
+			<TableSection Title="Contato">
+				<EntryCell Label="Telefone" Text="{Binding Path=Contact.Phone}" Keyboard="Numeric" />
+				<EntryCell Label="E-mail principal" Text="{Binding Path=Contact.Email}" Keyboard="Email" />
+			</TableSection>
+			<TableSection Title="Favoritos">
+				<SwitchCell Text="Adicionar aos Favoritos" On="{Binding Path=Contact.IsFavorite}" />
+			</TableSection>
+			<TableSection>
+				<ViewCell>
+					<Button Text="Salvar" Command="{Binding SaveCommand}" />
+				</ViewCell>
+			</TableSection>
+		</TableRoot>
+	</TableView>
+
+</ContentPage>
